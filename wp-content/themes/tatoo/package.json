@@ -39,6 +39,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "css": "node-sass --include-path scss scss/main.scss css/main.css",
-    "watch": "nodemon -e scss -x 'npm run css'"
+    "watch": "nodemon --watch scss --exec \"yarn css\""
   }
 }
