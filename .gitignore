@@ -3,3 +3,5 @@
 .env
 **/**/**/node_modules
 wp-config.php
+/wp-content/themes/tatoo/node_modules/
+/wp-content/themes/tatoo/css/
