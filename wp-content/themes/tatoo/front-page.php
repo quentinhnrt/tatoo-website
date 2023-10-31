@@ -11,12 +11,14 @@ get_header();
         while ( have_posts() ) :
             the_post();
 
-            the_content();
-        endwhile; // End of the loop.
+            get_template_part( 'template-parts/blocks/homepage/banner');
+            get_template_part( 'template-parts/blocks/homepage/description');
+
+        endwhile;
 
         ?>
 
-    </main><!-- #main -->
+    </main>
 
 <?php
 
