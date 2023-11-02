@@ -1,6 +1,5 @@
 <?php
 
-
 acf_add_local_field_group(array(
     'key' => 'history-block',
     'title' => 'Histoire',
@@ -12,9 +11,9 @@ acf_add_local_field_group(array(
     'location' => array(
         array(
             array(
-                'param' => 'post_type',
+                'param' => 'page',
                 'operator' => '==',
-                'value' => 'page',
+                'value' => '36',
             ),
         ),
     ),
