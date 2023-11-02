@@ -1,10 +1,11 @@
 <?php
 
 acf_add_local_field_group(array(
-    'key' => 'banner-block',
-    'title' => 'Banner',
+    'key' => 'description-block',
+    'title' => 'Description',
     'fields' => [
-        AcfHelper::field('Image de fond', 'banner-background', 'image'),
+        AcfHelper::field('Titre', 'description-title', 'text'),
+        AcfHelper::field('Texte de description', 'description-text', 'wysiwyg'),
     ],
     'location' => array (
         array (

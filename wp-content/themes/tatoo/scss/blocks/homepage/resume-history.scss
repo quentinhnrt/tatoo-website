@@ -1,0 +1,43 @@
+.resume-history {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: end;
+
+  &__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 760/480;
+    object-fit: cover;
+    padding-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $blue;
+  }
+
+  &__text {
+    font-size: 1.2rem;
+  }
+
+  &__link {
+    padding: 0.7rem 2rem;
+    border: 1px solid $blue;
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    color: $blue;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+}
