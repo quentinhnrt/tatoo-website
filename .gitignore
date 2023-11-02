@@ -5,3 +5,7 @@
 wp-config.php
 /wp-content/themes/tatoo/node_modules/
 /wp-content/themes/tatoo/css/
+
+/seeds/plugins
+/seeds/themes
+/seeds/uploads
