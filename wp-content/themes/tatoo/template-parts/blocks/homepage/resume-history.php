@@ -24,6 +24,6 @@ if (isset($image['ID'])) {
         <div class="resume-history__text">
             <?= $text ?>
         </div>
-        <a href="<?= $link['url'] ?>" class="resume-history__link"><?= $link['title'] ?></a>
+        <a href="<?= $link['url'] ?>" class="resume-history__link cta"><?= $link['title'] ?></a>
     </div>
 </div>
