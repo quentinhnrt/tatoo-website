@@ -1,13 +1,13 @@
 <?php
 
 acf_add_local_field_group(array(
-    'key' => 'description-block',
-    'title' => 'Description',
+    'key' => 'contact-block',
+    'title' => 'Contact',
     'fields' => [
-        AcfHelper::field('Titre', 'description-title', 'text'),
-        AcfHelper::field('Texte de description', 'description-text', 'wysiwyg'),
+        AcfHelper::field('Titre', 'contact-title', 'text'),
+        AcfHelper::field('Contact CTA', 'contact-link', 'link'),
     ],
-    'location' => array (
+    'location' => array(
         array(
             array(
                 'param' => 'page',

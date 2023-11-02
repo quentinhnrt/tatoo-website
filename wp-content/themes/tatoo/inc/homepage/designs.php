@@ -4,6 +4,8 @@ acf_add_local_field_group(array(
     'key' => 'designs-block',
     'title' => 'Designs',
     'fields' => [
+        AcfHelper::field('Titre', 'designs-title', 'text'),
+        AcfHelper::field('Label CTA', 'designs-label-cta', 'text'),
         AcfHelper::field('Designs', 'designs-selection', 'relationship', null, [
             'post_type' => 'design',
             'filters' => [
@@ -19,9 +21,9 @@ acf_add_local_field_group(array(
     'location' => array(
         array(
             array(
-                'param' => 'post_type',
+                'param' => 'page',
                 'operator' => '==',
-                'value' => 'page',
+                'value' => '10',
             ),
         ),
     ),

@@ -10,3 +10,18 @@ body {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+.cta {
+  padding: 0.7rem 2rem;
+  border: 1px solid $blue;
+  display: block;
+  width: fit-content;
+  text-decoration: none;
+  color: $blue;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}

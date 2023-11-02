@@ -7,11 +7,11 @@ acf_add_local_field_group(array(
         AcfHelper::field('Image de fond', 'banner-background', 'image'),
     ],
     'location' => array (
-        array (
-            array (
-                'param' => 'post_type',
+        array(
+            array(
+                'param' => 'page',
                 'operator' => '==',
-                'value' => 'page',
+                'value' => '10',
             ),
         ),
     ),
