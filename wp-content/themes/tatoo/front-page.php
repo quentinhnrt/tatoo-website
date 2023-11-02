@@ -15,6 +15,7 @@ get_header();
             get_template_part( 'template-parts/blocks/homepage/description');
             get_template_part( 'template-parts/blocks/homepage/resume-history');
             get_template_part( 'template-parts/blocks/homepage/designs');
+            get_template_part( 'template-parts/blocks/homepage/contact');
 
         endwhile;
 
