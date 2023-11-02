@@ -10,9 +10,9 @@ acf_add_local_field_group(array(
     'location' => array(
         array(
             array(
-                'param' => 'post_type',
+                'param' => 'page',
                 'operator' => '==',
-                'value' => 'page',
+                'value' => 'frontpage',
             ),
         ),
     ),

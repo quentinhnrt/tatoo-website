@@ -11,7 +11,6 @@ class AcfHelper
             $page = get_option('page_on_front');
             $currentPage = get_post($id);
 
-
             if (!$page || !$currentPage) return false;
 
             return $page == $currentPage->ID;
