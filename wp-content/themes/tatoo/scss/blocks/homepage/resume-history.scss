@@ -25,3 +25,17 @@
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 767px) {
+  .resume-history {
+    grid-template-columns: 1fr;
+    padding: 0 2rem;
+    &__image {
+      order: 2;
+    }
+
+    &__image {
+      aspect-ratio: 1/1;
+    }
+  }
+}

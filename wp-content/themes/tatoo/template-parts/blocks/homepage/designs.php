@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 $designs = get_field('designs-selection');
 $title = get_field('designs-title');
