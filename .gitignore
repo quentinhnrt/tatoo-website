@@ -5,6 +5,12 @@
 wp-config.php
 /wp-content/themes/tatoo/node_modules/
 /wp-content/themes/tatoo/css/
+/wp-content/themes/twentytwentyone/
+/wp-content/themes/twentytwentytwo/
+/wp-content/themes/twentytwentythree/
+/wp-content/plugins/
+/wp-content/languages/
+
 
 /seeds/plugins
 /seeds/themes
