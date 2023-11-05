@@ -1,72 +1,57 @@
-version: '3'
+version: "3.6"
 
 services:
-  traefik:
-    image: traefik:v2.5
-    command:
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entryPoints.web.address=:80"
-      - "--entryPoints.websecure.address=:443"
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./.docker/traefik/traefik.yml:/etc/traefik/traefik.yml"
-      - "./.docker/traefik/tls.yml:/etc/traefik/tls.yml"
-
   db:
-    image: mysql:8
+    image: mysql
+    platform: linux/amd64
+    restart: always
+    volumes:
+      - ./seeds/dump:/docker-entrypoint-initdb.d
     environment:
       MYSQL_ROOT_PASSWORD: database
       MYSQL_DATABASE: database
       MYSQL_USER: database
       MYSQL_PASSWORD: database
-    depends_on:
-      - traefik
-    volumes:
-      - ./.docker/db_data:/var/lib/mysql
+    networks:
+      - wp
     ports:
-      - "3306:3306"
+      - 3306:3306
+      
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:php8.1
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: database
+      WORDPRESS_DB_PASSWORD: database
+      WORDPRESS_DB_NAME: database
+      WORDPRESS_DEBUG: true
+      WORDPRESS_TABLE_PREFIX: to_
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+    ports:
+      - 80:80
+    networks:
+      - wp
 
   phpmyadmin:
+    depends_on:
+      - db
     image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: database
       MYSQL_USER: database
       MYSQL_PASSWORD: database
-    depends_on:
-      - traefik
-      - db
-    ports:
-      - "8081:80"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.pma.rule=Host(`pma.traefik.me`)"
+    networks:
+      - wp
 
-  app:
-    build:
-      context: ./.docker
-      args:
-        APACHE_DOCUMENT_ROOT: ${APACHE_DOCUMENT_ROOT:-/var/www/html}
-        PROJECT_NAME: ${PROJECT_NAME}
-    ports:
-      - "8000:8000"
-    environment:
-      APACHE_DOCUMENT_ROOT: /var/www/html
-      PROJECT_NAME: tatoo
-    depends_on:
-      - db
-      - traefik
-      - phpmyadmin
-    volumes:
-      - .:/var/www/html
-    user: "1000:1000"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.${PROJECT_NAME}.rule=Host(`${PROJECT_NAME}.traefik.me`)"
-
+networks:
+  wp:
 volumes:
-  db_data:
+  frontend_data:
