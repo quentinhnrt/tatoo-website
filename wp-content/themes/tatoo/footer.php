@@ -8,25 +8,31 @@
  *
  * @package tatoo
  */
-
+	$adresse = get_field('contact-address', 'options');
+	$phone = get_field('contact-phone', 'options');
+	$email = get_field('contact-email', 'options');
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'tatoo' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'tatoo' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'tatoo' ), 'tatoo', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+		<div class="site-footer__block">
+			<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
+			<div class="site-footer__block__contact">
+				<div class="site-footer__block__contact__item">
+					<?php echo $adresse ?>
+				</div>
+				<div class="site-footer__block__contact__item">
+					<?php echo $phone ?>
+				</div>
+				<div class="site-footer__block__contact__item">
+					<?php echo $email ?>
+				</div>
+			</div>
+		</div>
+		<div class="site-footer__info">
+			© 2023 by Quentin HONNART and Fabien LAPERT
+		</div>
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
 

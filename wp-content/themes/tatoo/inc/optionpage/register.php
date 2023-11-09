@@ -11,3 +11,4 @@ acf_add_options_page([
 ]);
 
 require get_template_directory() . '/inc/optionpage/designs-page.php';
+require get_template_directory() . '/inc/optionpage/contact.php';
