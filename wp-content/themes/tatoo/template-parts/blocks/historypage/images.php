@@ -2,10 +2,9 @@
 
 $images = get_field('images');
 
-if (!$tatooName && !$tatooDesc && !$tatooImage) {
+if (!$images || !is_array($images)) {
     return;
 }
-
 ?>
 
 <div class="images">
