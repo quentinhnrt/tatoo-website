@@ -117,7 +117,7 @@
       width: 100%;
 
       &.visible {
-        animation: slideIn 1s ease-in-out;
+        animation: slideIn 500ms ease;
       }
 
       @keyframes slideIn {
@@ -182,6 +182,48 @@
       &__10 {
         grid-area: j;
       }
+    }
+  }
+}
+
+@media (max-width: 762px) {
+  .archive-design {
+    &__items {
+      width: 90%;
+        &__template {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto 300px;
+            gap: 1rem;
+
+            &_1 {
+            grid-template-areas:
+                "a a"
+                "a a"
+                "b b"
+                "c d"
+                "e f"
+            ;
+            }
+
+            &_2 {
+            grid-template-areas:
+                "a b"
+                "c d"
+                "e f"
+                "g h"
+                "i j"
+            ;
+            }
+
+            &_3 {
+            grid-template-areas:
+                "a a"
+                "b b"
+                "c c"
+                "c c"
+            ;
+            }
+        }
     }
   }
 }
