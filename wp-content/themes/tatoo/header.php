@@ -26,5 +26,5 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tatoo' ); ?></a>
 
 	<header id="masthead" class="site-header">
-
-	</header><!-- #masthead -->
+		<?php wp_nav_menu( array( 'theme_location' => 'header' ) ); ?>
+	</header>

@@ -1,0 +1,37 @@
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px 0;
+    position: relative;
+    z-index: 999;
+    #menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            a {
+                color: #000;
+                font-size: 14px;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-decoration: none;
+                padding: 0 10px;
+                &:hover {
+                    color: #ff0000;
+                }
+            }
+        }
+        .menu-item-home {
+        
+        }
+        .current-menu-item {
+            a {
+                font-weight: 700;
+                
+            }
+        }
+    }
+}
