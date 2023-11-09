@@ -18,6 +18,15 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+	<script>
+		window.addEventListener('scroll', function() {
+			if (window.scrollY > 100) {
+				document.getElementById('masthead').classList.add('site-header-fixed');
+			} else {
+				document.getElementById('masthead').classList.remove('site-header-fixed');
+			}
+		});
+	</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -26,5 +35,5 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'tatoo' ); ?></a>
 
 	<header id="masthead" class="site-header">
-
-	</header><!-- #masthead -->
+		<?php wp_nav_menu( array( 'theme_location' => 'header' ) ); ?>
+	</header>

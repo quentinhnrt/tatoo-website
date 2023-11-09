@@ -49,7 +49,8 @@ function tatoo_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'tatoo' ),
+			'header' => esc_html__( 'Header', 'tatoo' ),
+			'footer' => esc_html__( 'Footer', 'tatoo' ),
 		)
 	);
 
@@ -139,6 +140,8 @@ add_action( 'widgets_init', 'tatoo_widgets_init' );
  */
 function tatoo_scripts() {
     wp_enqueue_style('theme-style', get_stylesheet_directory_uri().'/css/main.css');
+    wp_enqueue_script('theme-script', get_stylesheet_directory_uri().'/js/infinite-scroll-designs.js');
+    wp_localize_script( 'theme-script', 'ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action( 'wp_enqueue_scripts', 'tatoo_scripts' );
 
@@ -172,3 +175,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_template_directory() . '/inc/acf-fields.php';
 
 require get_template_directory() . '/inc/post-types.php';
+
+require get_template_directory() . '/inc/wp-ajax.php';
