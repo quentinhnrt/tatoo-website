@@ -1,5 +1,6 @@
 <?php
     $title = get_field('history-title');
+    $background = get_field('history-background');
     $events = get_field('history');
 
     if (!$title || !$events) {
@@ -7,7 +8,7 @@
     }
 ?>
 
-<div class="history">
+<div class="history" style="background-image: url('<?= $background['url'] ?>')">
     <h2 class="history__title"><?= $title ?></h2>
     <ul class="history__list">
         <?php foreach ($events as $event) : ?>
