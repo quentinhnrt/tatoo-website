@@ -1,0 +1,103 @@
+
+.history {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 100px 10vw 50px 10vw;
+  color: $white;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+  }
+  &__title, &__list {
+    position: relative;
+    z-index: 2;
+  }
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 60px;
+    list-style: none;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 50%;
+      width: 5px;
+      background: rgba($white, 0.5);
+      border-radius: 3px;
+      z-index: 1;
+    } 
+
+    &__item {
+      position: relative;
+      background: $white;
+      color: $blue;
+      width: calc( 50% - 58px );
+      padding: 15px;
+      margin-top: 20px;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: calc( 100% + 26px);
+        background: $white;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        z-index: 2;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 0;
+        height: 0;
+        border-top: 20px solid transparent;
+        border-left: 16px solid $white;
+        border-bottom: 20px solid transparent;
+      }
+
+      &:nth-child(even) {
+        margin-left: calc( 50% + 34px );
+      }
+
+      &:nth-child(even):before {
+        left: auto;
+        right: calc( 100% + 26px );
+      }
+
+      &:nth-child(even):after {
+        left: auto;
+        right: 100%;
+        border-left: none;
+        border-right: 16px solid $white;
+      }
+    }
+  }
+}

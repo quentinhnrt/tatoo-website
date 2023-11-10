@@ -5,6 +5,7 @@ acf_add_local_field_group(array(
     'title' => 'Histoire',
     'fields' => [
         AcfHelper::field('Titre', 'history-title', 'text', null, ['required' => true]),
+        AcfHelper::field('Image de fond', 'history-background', 'image', null, ['required' => true]),
         AcfHelper::field('Evenements', 'history', 'repeater', null, ['required' => true, 'layout' => 'row', 'sub_fields' => [
             AcfHelper::field('Date', 'history-date', 'date_picker', 'history', ['required' => true]),
             AcfHelper::field('Description', 'history-description', 'wysiwyg', 'history', ['required' => true]),
