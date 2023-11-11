@@ -1,6 +1,4 @@
-// we have .images and .images__item and i want to make wrap with 3 items in a row
 .images {
-  // make gradient background from the top to the bottom with $blue on top and $white on bottom
   background: linear-gradient(to bottom, $blue, $white);
   padding: 50px 5vw;
   &__title {
@@ -11,7 +9,9 @@
   }
   &__content {
     display: flex;
-    flex-direction: row;
+    // make it in wrap with 3 items in a row
+    flex-wrap: wrap;
+
     justify-content: space-between;
     align-items: center;
     margin: auto;
@@ -21,8 +21,8 @@
     }
     
     &__item {
-      width: 20vw;
-      height: 20vw;
+      width: 25vw;
+      height: 25vw;
       flex-shrink: 0;
       object-fit: cover;
       border-radius: 5%;
