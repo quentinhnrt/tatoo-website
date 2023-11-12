@@ -2,11 +2,6 @@
 
 $image = get_field('banner-contact');
 $title = get_field('banner-contact-title');
-if (isset($image['ID'])) {
-    $image = wp_get_attachment_image($image['ID'], 'full', false, [
-        'class' => 'banner__background',
-    ]);
-}
 
 if (!$image) {
     return;
@@ -14,8 +9,7 @@ if (!$image) {
 
 ?>
 
-<div class="banner">
-    <?= $image ?>
+<div class="banner" style="background-image: url('<?= $image['url'] ?>')">
     <div class="banner__tagline">
         <p class="banner__tagline__item">
             <?= $title ?>
