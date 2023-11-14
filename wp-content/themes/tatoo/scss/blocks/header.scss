@@ -1,4 +1,5 @@
 .site-header {
+    transition: all 0.3s ease-in-out;
     background-color: transparent;
     border-bottom: 1px solid $white;
     padding: 40px 0;
@@ -13,15 +14,6 @@
         margin: auto;
         padding: 0;
         width: 50vw;
-        &::after{
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color:$blue;
-        }
         li {
             a {
                 font-family: 'Open Sans', sans-serif;
@@ -44,6 +36,7 @@
                 font-weight: 700;
             }
             &::after {
+                transition: all 0.3s ease-in-out;
                 content: '';
                 position: absolute;
                 bottom: -40px;
@@ -60,8 +53,9 @@
 }
 
 .site-header-fixed {
+    transition: all 0.3s ease-in-out;
     padding: 20px 0;
-    background-color: $blue;
+    backdrop-filter: blur(5px);
     .current-menu-item {
         &::after {
             bottom: -20px !important;

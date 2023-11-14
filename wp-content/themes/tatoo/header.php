@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 	<script>
 		window.addEventListener('scroll', function() {
-			if (window.scrollY > 100) {
+			if (window.scrollY > 1) {
 				document.getElementById('masthead').classList.add('site-header-fixed');
 			} else {
 				document.getElementById('masthead').classList.remove('site-header-fixed');
