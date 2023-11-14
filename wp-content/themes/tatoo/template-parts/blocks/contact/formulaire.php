@@ -13,6 +13,12 @@
 ?>
 
 <div class="formulaire">
+    <div class="formulaire__form">
+        <?= do_shortcode($form) ?>
+        <span class="formulaire__form__required">
+            Les champs munis d&rsquo;un astérisque (*) sont obligatoires.
+        </span>
+    </div>
     <div class="formulaire__coordonnees">
         <div class="formulaire__coordonnees__infos">
             <h2 class="formulaire__coordonnees__items__infos__title">
@@ -34,11 +40,5 @@
         <div class="formulaire__coordonnees__map">
             <?php echo $iframe ?>
         </div>
-    </div>
-    <div class="formulaire__form">
-        <?= do_shortcode($form) ?>
-        <span class="formulaire__form__required">
-            Les champs munis d&rsquo;un astérisque (*) sont obligatoires.
-        </span>
     </div>
 </div>
