@@ -60,6 +60,10 @@
       padding: 15px;
       margin-top: 20px;
 
+      opacity: 1;
+      transform: translateX(0);
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+
       &:before {
         content: "";
         display: block;

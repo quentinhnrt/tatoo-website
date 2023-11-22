@@ -27,6 +27,27 @@
             }
         });
     </script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const items = document.querySelectorAll('.history__list__item');
+            items.forEach((item, index) => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const opacity = itemPosition / 200;
+
+                if (itemPosition < 200) {
+                if (index % 2 === 0) {
+                    item.style.transform = `translateX(-${200-itemPosition}px)`;
+                } else {
+                    item.style.transform = `translateX(${200-itemPosition}px)`;
+                }
+                item.style.opacity = opacity;
+                } else {
+                item.style.transform = 'translateX(0)';
+                item.style.opacity = 1;
+                }
+            });
+        });
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
