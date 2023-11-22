@@ -46,6 +46,12 @@
             width: 20vw;
             height: 20vw;
             object-fit: cover;
+
+            @media screen and (max-width: 1024px) {
+                width: 70vw;
+                height: auto;
+                aspect-ratio: 1/1;
+            }
         }
         &__quote {
             font-style: italic;
