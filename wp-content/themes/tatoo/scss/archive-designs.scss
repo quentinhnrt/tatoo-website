@@ -115,6 +115,7 @@
 
     &__item {
       width: 100%;
+      background-color: white;
 
       &.visible {
         animation: slideIn 500ms ease;
@@ -186,7 +187,7 @@
   }
 }
 
-@media (max-width: 762px) {
+@media screen and (max-width: 1024px) {
   .archive-design {
     &__items {
       width: 90%;

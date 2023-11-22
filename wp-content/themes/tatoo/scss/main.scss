@@ -5,6 +5,10 @@
 @import "blocks/footer";
 @import "archive-designs.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $white;
 }

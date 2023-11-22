@@ -1,7 +1,7 @@
 <?php
 
 $image = get_field('banner-contact');
-$title = get_field('banner-contact-title');
+$title = get_field('banner-contact-title') ?? 'Contact';
 
 if (!$image) {
     return;

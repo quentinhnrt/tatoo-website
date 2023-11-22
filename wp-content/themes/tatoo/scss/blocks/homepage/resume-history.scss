@@ -26,7 +26,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .resume-history {
     grid-template-columns: 1fr;
     padding: 0 2rem;

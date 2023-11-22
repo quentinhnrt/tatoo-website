@@ -2,7 +2,7 @@
     $adresse = get_field('contact-address', 'options');
     $phone = get_field('contact-phone', 'options');
     $email = get_field('contact-email', 'options');
-    $iframe = get_field('location');
+    $iframe = get_field('formlocation');
     $title = get_field('form-title');
     $description = get_field('form-description');
 

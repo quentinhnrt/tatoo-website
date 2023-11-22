@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('#archive-design-container');
     const firstTemplate = document.querySelector('.archive-design__items__template')
     const trigger = document.querySelector('#infinite-trigger-point');
+    if (!container || !firstTemplate || !trigger) return;
     const loader = trigger.querySelector('.loader')
     let hasPosts = true;
     let items = container.querySelectorAll('.archive-design__items__item')

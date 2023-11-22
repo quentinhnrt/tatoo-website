@@ -31,13 +31,14 @@
   }
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .banner {
     &__tagline {
-      padding: 0 2rem;
+      padding: 0;
       &__item {
         text-align: center;
         font-size: 2rem;
+        width: 90%;
       }
     }
   }
